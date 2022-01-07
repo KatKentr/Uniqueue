@@ -1,6 +1,12 @@
+/******************************************************************************
+* Compilation: javac Uniqueue.java
+* Dependencies: SET.java Queue.java
+* Aikaterini Kentroti
+******************************************************************************/
 
+import java.util.Iterator;
 
-public class Uniqueue<Item extends Comparable<Item>>{
+public class Uniqueue<Item extends Comparable<Item>>implements Iterable<Item>{
 	
 	private Queue<Item>  queue; //instance fields
 	private SET<Item> set;
@@ -30,21 +36,28 @@ public class Uniqueue<Item extends Comparable<Item>>{
 	public String toString() {
 		 return queue.toString();
 		 
-		//return set.toString();   In order to print the the elements in ascending order, since an object of the SET.java class represents an ordered set of comparable items.
-	}
+		 //Answer to the question of Exercise 2:
+		 
+		//return set.toString();   in order to print the items {item1, item2,...} in ascending order, since an object of the SET.java class represents an ordered set of comparable items.
+		 
+		//According to exercise 2, the data type Uniqueue is a queue, except that elements identical to existing ones should not be inserted. Therefore, it seems more correct to print the elements
+		//with the order they were inserted(return queue.toString();) and not in ascending order.
+		 
+	}                             
 	
 	public Item dequeue(Item item) {   //removes and returns the item least recently added in the queue
 		return queue.dequeue();
 	}
   
-	public void addInSet(Item item) {  //adds items to the set
-		
-		set.add(item);
-			
-	}
 	
 	public boolean isIncluded(Item item) {   //returns true if the if the set contains the item. 
 			return set.contains(item);				
+	}
+
+	@Override
+	public Iterator<Item> iterator() { //Iterable implemented, in order to use a for-each-loop in the client class
+		
+		return queue.iterator();
 	}
 
 }

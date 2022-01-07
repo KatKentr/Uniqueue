@@ -1,0 +1,2 @@
+Size of input file=209341
+Uniqueue size=31809

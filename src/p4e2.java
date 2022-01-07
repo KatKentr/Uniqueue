@@ -1,4 +1,10 @@
-
+/******************************************************************************
+* Compilation: javac P4e2.java
+* Execution: java p4e2<mobyDick.txt>out-p4e2_mobyDick.txt, java p4e2<tinyTale.txt >out-p4e2_tinyTale.txt
+* Dependencies: StdIn.java StdOut.java Uniqueue.java
+* Data files: mobyDick.txt, tinyTale.txt
+* Aikaterini Kentroti
+******************************************************************************/
 public class p4e2{
 	
 	public static void main(String[] args) {
@@ -16,10 +22,10 @@ public class p4e2{
 		
 		  StdOut.println("Uniqueue size="+ uniqueue.uniQueueSize()); //prints the size of the queue
 		
-		  
-		  StdOut.print("The elements in Uniqueue: " +uniqueue.toString()+"\n"); //printing the queue items by using toString()
 		 
-			 
+		  for (String s : uniqueue){   //printing the items in uniqueue
+			   StdOut.print(s + "\n"); 
+	    }       	 
 			
 	}
 }
